@@ -1,0 +1,36 @@
+{% extends "\components\\base.html.twig" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-auto"></div>
+    <div class="col-auto">
+        <form method="get" action="/" id="the_form">
+            <div class="m-3 form-floating">
+                <button class="btn btn-primary mb-3" type="submit" >Return</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-auto"></div>
+</div>
+<div class="row">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+            {%for key, value in tableData[0]%}<th>{{key}}</th>{%endfor%}
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+            {%for key, value in tableData[0]%}<th>{{key}}</th>{%endfor%}
+            </tr>
+        </tfoot>
+        <tbody>
+            {%for arr in tableData%}
+                <tr>
+                {%for key, value in arr%}<td>{{value}}</td>{%endfor%}
+                </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

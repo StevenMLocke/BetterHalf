@@ -1,0 +1,50 @@
+{% extends "\components\\base.html.twig" %}
+
+{% block content %}
+<div class="row">
+    <div class="col">
+    </div>
+    <div class="col-sm-6 m-3 container border">
+        <form method="post" id="the_form">
+            <div class="p-3 row">
+                <div class="col-auto">
+                    <div class="m-3 form-floating">
+                        <input class="form-control" id="streamer_name" name="streamer_name" value="{{ username }}" readonly>
+                        <label class="form-label">Streamer</label>
+                    </div>
+                    <div class="m-3 form-floating">
+                        <input type="text" class="form-control" id="event_name" name="stream_event_name" list="my_events" autocomplete="off" required>
+                        <datalist id="my_events">
+                            {% for name, event in events %}
+                            <option>{{ name }}</option>
+                            {% endfor %}
+                        </datalist>
+                        <label class="form-label">Event Name</label>
+                    </div>
+                    <div class="m-3 form-floating">
+                        <button class="btn btn-primary mb-3" type="submit" form="the_form">button</button>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="m-3 form-floating">
+                        <textarea class="form-control" id="racers" name="racers" style="height: 750px" required></textarea>
+                        <label class="form-label">Paste Racers Here</label>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col">
+        <div class="row">
+            <img src="{{ profile_pic }}" class="img_fluid border rounded-circle" width="50%" />
+            </br>
+            <h1>{{ username }}</h1>
+            <div class="row">
+                <form name="logout" id="logout" method="GET" action="/login/logout" >
+                    <button class="btn btn-primary mb-3" type="submit" form="logout">Log Out</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

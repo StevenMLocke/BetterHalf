@@ -1,0 +1,20 @@
+{
+    "config": {
+        "platform": {
+            "php": "7.4.27"
+        }
+    },
+    "require": {
+        "twig/twig": "^3.3",
+        "twbs/bootstrap": "^5.1",
+        "guzzlehttp/guzzle": "^7.4",
+        "firebase/php-jwt": "^6.0",
+        "textalk/websocket": "^1.5",
+        "vlucas/phpdotenv": "^5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "BetterHalf\\": "entities/"
+        }
+    }
+}
